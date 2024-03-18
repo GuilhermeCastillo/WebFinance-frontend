@@ -1,11 +1,11 @@
-import "./header.css";
+import * as C from "./styles";
 
-function Header() {
+const Header = () => {
   return (
-    <header>
+    <C.Header>
       <h1>2024 - Março</h1>
-    </header>
+    </C.Header>
   );
-}
+};
 
 export default Header;

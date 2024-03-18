@@ -1,9 +1,11 @@
-function Home() {
+import Resume from "../../components/Resume";
+
+const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <Resume />
     </div>
   );
-}
+};
 
 export default Home;
