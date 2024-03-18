@@ -17,6 +17,20 @@ const Home = () => {
     title: "Despesas por categoria: ",
   };
 
+  const dataBalance = [
+    ["Mes", "Receitas", "Despesas"],
+    ["Abril", 1000, 400],
+    ["Março", 1000, 400],
+    ["Abril", 2000, 4000],
+  ];
+
+  const optionsBalance = {
+    chart: {
+      title: "Balanço Mensal",
+      subtitle: "Sales, Expenses, and Profit: 2014-2017",
+    },
+  };
+
   return (
     <div>
       <Resume />
@@ -26,6 +40,13 @@ const Home = () => {
         options={options}
         width={"100%"}
         height={"400px"}
+      />
+      <Chart
+        chartType="Bar"
+        width="100%"
+        height="400px"
+        data={dataBalance}
+        options={optionsBalance}
       />
     </div>
   );

@@ -3,7 +3,7 @@ import * as C from "./styles";
 const Header = () => {
   return (
     <C.Header>
-      <h1>2024 - Março</h1>
+        <h1>Abril</h1>
     </C.Header>
   );
 };
