@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Error from "./pages/Error";
+import Global from "./styles/global";
 
 import Header from "./components/Header";
 
@@ -16,6 +17,8 @@ function RoutesApp() {
 
         <Route path="*" element={<Error />}></Route>
       </Routes>
+
+      <Global />
     </BrowserRouter>
   );
 }
