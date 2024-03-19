@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 import Grid from "../Grid";
 import * as C from "./styles";
 
@@ -6,6 +9,8 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
   const [desc, setDesc] = useState("");
   const [amount, setAmount] = useState("");
   const [isExpense, setExpense] = useState(false);
+
+  const [date, setDate] = useState(new Date());
 
   const generateID = () => Math.round(Math.random() * 1000);
 
@@ -23,12 +28,14 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
       desc: desc,
       amount: amount,
       expense: isExpense,
+      date: `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`,
     };
 
     handleAdd(transaction);
 
     setDesc("");
     setAmount("");
+    setDate("");
   };
 
   return (
@@ -46,6 +53,12 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
             onChange={(e) => setAmount(e.target.value)}
           />
         </C.InputContent>
+
+        <C.InputContent>
+          <C.Label>Data</C.Label>
+          <DatePicker selected={date} onChange={(date) => setDate(date)} />
+        </C.InputContent>
+
         <C.RadioGroup>
           <C.Input
             type="radio"
